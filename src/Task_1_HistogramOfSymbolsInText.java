@@ -1,7 +1,5 @@
 import java.io.*;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.Scanner;
+import java.util.*;
 
 
 public class Task_1_HistogramOfSymbolsInText {
@@ -60,6 +58,14 @@ public class Task_1_HistogramOfSymbolsInText {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
+
+        Character[] keysASCII = dict.keySet().toArray(new Character[0]);
+        AbstractList<Character> keysSortedASCII = new ArrayList<>();
+
+        Arrays.stream(keysASCII).sorted().forEach(keysSortedASCII::add);
+
+        for (int i = 0; i < keysASCII.length; i++)
+            System.out.println(keysSortedASCII.get(i));
 
         for (char key: dict.keySet()) {
             System.out.println(key + " : " + dict.get(key));
