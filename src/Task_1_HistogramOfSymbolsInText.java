@@ -66,14 +66,36 @@ public class Task_1_HistogramOfSymbolsInText {
         // use stream API and lambda
         Arrays.stream(keysASCII).sorted().forEach(keysSortedASCII::add);
 
-        for (int i = 0; i < keysASCII.length; i++)
-            System.out.println(keysSortedASCII.get(i));
-
-        for (char key: dict.keySet()) {
+       /* for (char key: dict.keySet()) {
             System.out.println(key + " : " + dict.get(key));
+        }
+        */
+        int maxValue = 0;
+        for (char key: keysSortedASCII) {
+           // System.out.println(key + " : " + dict.get(key));
+            if (maxValue < dict.get(key))
+                maxValue = dict.get(key);
         }
 
         //beautiful histogram output
-        
+        char[][] print = new char[maxValue][keysSortedASCII.size()];
+        for (int i = 0; i < keysSortedASCII.size(); i++) {
+            for (int j = 0; j < maxValue; j++) {
+                print[j][i] = ' ';
+            }
+            for (int j = 0; j < dict.get(keysSortedASCII.get(i)); j++) {
+                print[maxValue - 1 - j][i] = '#';
+            }
+        }
+        for (int i = 0; i < maxValue; i++) {
+            for (int j = 0; j < keysSortedASCII.size(); j++) {
+                System.out.print(print[i][j]);
+            }
+            System.out.println();
+        }
+        for (int i = 0; i < keysSortedASCII.size(); i++){
+            System.out.print(keysSortedASCII.get(i));
+        }
+
     }
 }
