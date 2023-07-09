@@ -37,7 +37,7 @@ public class Task_1_HistogramOfSymbolsInText {
 
         // FILE input / output
         try {
-            Scanner scanner = new Scanner(new File("C:\\Users\\user\\OneDrive\\Рабочий стол\\AlgorithmContestDivAYa\\src\\input.txt"));
+            Scanner scanner = new Scanner(new File("input.txt"));
 
             while (scanner.hasNextLine()) {
                 String newString = scanner.nextLine();
