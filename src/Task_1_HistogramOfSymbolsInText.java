@@ -60,7 +60,7 @@ public class Task_1_HistogramOfSymbolsInText {
         }
         // here we get an array of keys
         Character[] keysASCII = dict.keySet().toArray(new Character[0]);
-        
+
         //sort keys based on ASCII code
         AbstractList<Character> keysSortedASCII = new ArrayList<>();
         // use stream API and lambda
@@ -72,5 +72,8 @@ public class Task_1_HistogramOfSymbolsInText {
         for (char key: dict.keySet()) {
             System.out.println(key + " : " + dict.get(key));
         }
+
+        //beautiful histogram output
+        
     }
 }
