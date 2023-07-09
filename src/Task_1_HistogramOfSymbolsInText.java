@@ -58,10 +58,12 @@ public class Task_1_HistogramOfSymbolsInText {
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         }
-
+        // here we get an array of keys
         Character[] keysASCII = dict.keySet().toArray(new Character[0]);
+        
+        //sort keys based on ASCII code
         AbstractList<Character> keysSortedASCII = new ArrayList<>();
-
+        // use stream API and lambda
         Arrays.stream(keysASCII).sorted().forEach(keysSortedASCII::add);
 
         for (int i = 0; i < keysASCII.length; i++)
