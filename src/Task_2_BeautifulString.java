@@ -8,6 +8,7 @@ import java.util.Scanner;
  */
 
 // алгоритм правильный, но слишком медленный
+
 public class Task_2_BeautifulString {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
