@@ -111,6 +111,7 @@ public class Task_2_BeautifulString {
                     prefixSum[i] = (st[i] == letter) ? prefixSum[i - 1] : prefixSum[i - 1] + 1;
                 }
             }
+            
 
         }
     }
