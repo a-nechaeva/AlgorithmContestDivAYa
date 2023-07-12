@@ -11,13 +11,13 @@ public class Task_5_StringGoodnessIppolit {
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
         int numberOfLetters = in.nextInt();
-        ArrayList<Integer> letters = new ArrayList<>();
-        letters.add(in.nextInt());
+        ArrayList<Long> letters = new ArrayList<>();
+        letters.add(in.nextLong());
 
-        int stringGoodness = 0;
+        long stringGoodness = 0;
 
         for (int i = 1; i < numberOfLetters; i++) {
-            letters.add(in.nextInt());
+            letters.add(in.nextLong());
             stringGoodness += min(letters.get(i), letters.get(i - 1));
         }
         System.out.println(stringGoodness);
