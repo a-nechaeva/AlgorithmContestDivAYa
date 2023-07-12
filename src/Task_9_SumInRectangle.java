@@ -11,20 +11,19 @@ public class Task_9_SumInRectangle {
 
         for (int i = 0; i < matrixLength; i++) {
             for (int j = 0; j < matrixWidth; j++) {
-                matrix[i][j] = in.nextInt();
+                matrix[i][j] = (j == 0) ? in.nextInt(): matrix[i][j - 1] + in.nextInt();
             }
         }
         for (int i = 0; i < numberOfRequests; i++) {
-            int X1 = in.nextInt();
             int Y1 = in.nextInt();
-            int X2 = in.nextInt();
+            int X1 = in.nextInt();
             int Y2 = in.nextInt();
+            int X2 = in.nextInt();
 
             int sum = 0;
             for (int n = Y1 - 1; n < Y2; n++) {
-                for (int m = X1 - 1; m < X2; m++) {
-                    sum += matrix[m][n];
-                }
+                X1 = (X1 > 1) ? X1 - 1 : X1;
+                sum += (matrix[n][X2 - 1] - matrix[n][X1 - 1]);
             }
             System.out.println(sum);
         }
