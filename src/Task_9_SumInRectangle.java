@@ -22,8 +22,8 @@ public class Task_9_SumInRectangle {
 
             int sum = 0;
             for (int n = Y1 - 1; n < Y2; n++) {
-                X1 = (X1 > 1) ? X1 - 1 : X1;
-                sum += (matrix[n][X2 - 1] - matrix[n][X1 - 1]);
+                
+                sum += (X1 > 1) ? (matrix[n][X2 - 1] - matrix[n][X1 - 2]) : matrix[n][X2 - 1];
             }
             System.out.println(sum);
         }
