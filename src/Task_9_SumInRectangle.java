@@ -40,7 +40,7 @@ public class Task_9_SumInRectangle {
             } else if (Y1 > 1) {
                 sum -= matrix[Y1 - 2][X2 - 1];
             }
-           
+
             System.out.println(sum);
         }
     }
