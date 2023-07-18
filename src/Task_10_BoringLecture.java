@@ -6,7 +6,7 @@ public class Task_10_BoringLecture {
     // не проходит 9 тест (WA)
     public static void main(String[] args) {
         Scanner in = new Scanner(System.in);
-        Hashtable<Character, Integer> alphabet = new Hashtable<>();
+        Hashtable<Character, Long> alphabet = new Hashtable<>();
         char[] input = in.next().toCharArray();
         Character[] alexFavouriteWord = new Character[input.length];
 
@@ -15,7 +15,7 @@ public class Task_10_BoringLecture {
             alexFavouriteWord[i] = input[i];
         }
 
-        Arrays.stream(alexFavouriteWord).distinct().forEach(s -> alphabet.put(s, 0));
+        Arrays.stream(alexFavouriteWord).distinct().forEach(s -> alphabet.put(s, 0L));
 
         for (int i = 0; i < input.length; i++) {
             int wordInStringsCounter = (i + 1) * (input.length - i);
